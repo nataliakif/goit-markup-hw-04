@@ -30,6 +30,7 @@ a{
 .section{
     padding-top: 94px;
     padding-bottom: 94px;
+
 }
 .container{
     margin-right: auto;
@@ -80,6 +81,8 @@ a{
 .contact-link{
     display: flex;
     align-items: center;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.6);
 }
 .email{
     width: 16px;
@@ -93,27 +96,27 @@ a{
     fill: var(--primary-text-color);
     margin-right: 10px;
 }
-
-.site-nav .nav-link,
-.header-contacts .contact-link{
+.header-contacts{
     padding-top: 32px;
     padding-bottom: 32px;
 }
 .nav-link{
     color: var(--title-text-color);
 }
-.header-contacts .contact-link{  
+.header-contacts .contact-link{ 
     color: var(--primary-text-color);
 }
 .nav-link:hover, 
 .nav-link:focus, 
 .nav-link.current,
+.contact-link:hover, 
+.contact-link:focus{
+    color: var(--primary-accent-color);
+}
 .contact-link:hover .contact-icon, 
 .contact-link:focus .contact-icon{
-    color: var(--primary-accent-color);
     fill: var(--primary-accent-color);
 }
-
 /* Секция Hero */
 .hero{   
     background-color: #2F303A;
@@ -121,7 +124,6 @@ a{
     padding-top: 200px;
     padding-bottom: 200px;
     max-width: 1600px;
-    height: 600px;
     margin-left: auto;
     margin-right: auto;
     background-image: linear-gradient(
@@ -129,6 +131,8 @@ a{
         rgba(47, 48, 58, 0.4)
     ),
      url(../images/studio/hero-image.jpg);
+     background-repeat: no-repeat;
+     background-size: 100%;
 }
 .hero-title{
     width: 696px;
@@ -202,27 +206,17 @@ a{
 .features-list .list-text{
     margin: 0;
 }
-.features-list > .list-item::before{
+.feature-pic{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
     margin-bottom: 30px;
-    display: block;
-    content: "";
     height: 120px;
-    background-size: auto;
-    background-repeat: no-repeat;
     background-color: #F5F4FA;
-    background-position:  center;
 }   
-.features-list > .list-item:first-child::before{
-    background-image: url(../images/studio/features1.svg);
-}
-.features-list > .list-item:nth-child(2)::before{
-    background-image: url(../images/studio/features2.svg);
-}
-.features-list > .list-item:nth-child(3)::before{
-    background-image: url(../images/studio/features3.svg);
-}
-.features-list > .list-item:last-child::before{
-    background-image: url(../images/studio/features4.svg);
+.feature-icon{
+    width: 70px;
+    height: 70px;
 }
 .about{
     padding-top: 0;
@@ -277,8 +271,6 @@ a{
     align-items: center;
     border-radius: 50%;
     background-color: var(--secondary-accent-color);
-    background-position: center;
-    background-repeat: no-repeat;
 }
 .social-link:hover,
 .social-link:focus{
@@ -297,32 +289,33 @@ a{
     display: flex;
     align-items: center;   
 }
-.client-item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.client-item{  
     width: 170px;
     height: 92px;
-
-    border: 1px solid #AFB1B8;
-    border-radius: 4px;
     margin-right: 30px;
 }
 .client-item:last-child{
     margin-right: 0;
 }
+.client-link{
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+}
 .client-icon{
-    position: center;
     width: 106px;
     height: 60px;
     fill: #AFB1B8;
 }
-.client-item:hover,
-.client-item:focus{
+.client-link:hover,
+.client-link:focus{
     border: 1px solid var(--primary-accent-color);
 }
-.client-item:hover .client-icon,
-.client-item:focus .client-icon{
+.client-link:hover .client-icon,
+.client-link:focus .client-icon{
     fill: var(--primary-accent-color);
 }
 /* Подвал сайта */
@@ -335,24 +328,15 @@ a{
     display: flex;
     align-items: baseline;
 }
-.container.left{
-   width: 400px;
-   padding: 0;
-
+.left-content{
+    margin-right: 70px;
 }
 .logo-footer{
     display: block;
     margin-right: 0;
     margin-bottom: 20px;
 }
-.contact-link{
-    font-style: normal;
-    color: rgba(255, 255, 255, 0.6);
-}
-.contact-link:hover,
-.contact-link:focus{
-    color: var(--primary-accent-color);
-}
+
 .contact .list-item + .list-item{
     margin-top: 9px;
 }
@@ -420,8 +404,11 @@ a{
     margin-right: 30px;
     margin-bottom: 30px;
 }
-.projects-list .list-item:focus,
-.projects-list .list-item:hover{
+.project-link{
+    display: block;
+}
+.project-link:focus,
+.project-link:hover{
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 
     0px 4px 4px rgba(0, 0, 0, 0.06), 
     1px 4px 6px rgba(0, 0, 0, 0.16);
